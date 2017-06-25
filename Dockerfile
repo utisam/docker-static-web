@@ -1,8 +1,10 @@
 FROM ubuntu:zesty
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ca-certificates curl tar xz-utils dirmngr make rsync gettext php openjdk-8-jre-headless \
+    ca-certificates curl tar xz-utils dirmngr make rsync gettext php openjdk-8-jre-headless python3 python3-pip \
  && rm -rf ~/.npm && rm -rf /var/lib/apt/lists/*
+
+RUN pip3 install Pygments
 
 # gpg keys listed at https://github.com/nodejs/node#release-team
 RUN set -ex \
@@ -34,3 +36,4 @@ RUN npm install -g \
     less less-plugin-autoprefix less-plugin-clean-css less-plugin-glob \
     eslint jsdoc html-minifier html-validator-cli \
  && rm -rf ~/.npm
+

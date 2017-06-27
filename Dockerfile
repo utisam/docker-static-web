@@ -1,7 +1,7 @@
 FROM ubuntu:zesty
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    ca-certificates curl tar xz-utils dirmngr make rsync gettext php openjdk-8-jre-headless python3 python3-pip \
+    ca-certificates curl tar xz-utils dirmngr make openssh-client rsync gettext php openjdk-8-jre-headless python3 python3-pip \
  && rm -rf ~/.npm && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install Pygments

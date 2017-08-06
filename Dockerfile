@@ -33,7 +33,7 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
  && tar -xJf "node-v$NODE_VERSION-linux-x64.tar.xz" -C /usr/local --strip-components=1 \
  && rm "node-v$NODE_VERSION-linux-x64.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt
 RUN npm install -g \
-    less less-plugin-autoprefix less-plugin-clean-css less-plugin-glob \
+    less less-plugin-autoprefix less-plugin-clean-css less-plugin-glob less-plugin-csscomb \
     eslint jsdoc html-minifier html-validator-cli \
  && rm -rf ~/.npm
 
